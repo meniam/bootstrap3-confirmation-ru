@@ -74,21 +74,21 @@
 				e.preventDefault();
 			});
 		}
-	}
+	};
 
 	if (!$.fn.popover || !$.fn.tooltip) throw new Error('Confirmation requires popover.js and tooltip.js');
 
-	Confirmation.VERSION  = '1.0.5'
+	Confirmation.VERSION  = '1.0.6'
 
 	Confirmation.DEFAULTS = $.extend({}, $.fn.popover.Constructor.DEFAULTS, {
-		placement 		: 'right',
-		title 			: 'Are you sure?',
-		btnOkClass 		: 'btn btn-sm btn-danger',
-		btnOkLabel 		: 'Delete',
-		btnOkIcon 		: 'glyphicon glyphicon-ok',
+		placement 		: 'bottom',
+		title 			: 'Вы увенеры?',
+		btnOkClass 		: 'btn btn-sm btn-primary',
+		btnOkLabel 		: 'Да',
+		btnOkIcon 		: 'fa fa-check',
 		btnCancelClass 	: 'btn btn-sm btn-default',
-		btnCancelLabel 	: 'Cancel',
-		btnCancelIcon 	: 'glyphicon glyphicon-remove',
+		btnCancelLabel 	: 'Нет',
+		btnCancelIcon 	: 'fa fa-times',
 		href 			: '#',
 		target 			: '_self',
 		singleton 		: true,
@@ -99,10 +99,11 @@
 		onCancel 		: function(event, element){},
 		template 		:   '<div class="popover"><div class="arrow"></div>'
 							+ '<h3 class="popover-title"></h3>'
-							+ '<div class="popover-content">'
-							+ '<a data-apply="confirmation">Yes</a>'
+							+ '<div class="popover-content text-center">'
+							+ '<div class="btn-group"><a data-apply="confirmation">Yes</a>'
 							+ '<a data-dismiss="confirmation">No</a>'
 							+ '</div>'
+                            + '</div>'
 							+ '</div>'
 	});
 
